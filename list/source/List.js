@@ -529,7 +529,9 @@ enyo.kind({
 			return r;
 		}
 		this.lastPos = pos;
-		this.update(pos);
+		if (!this.getStrategy().dragging) { 
+			this.update(pos);
+		}
 		if (this.pinnedReorderMode) {
 			this.reorderScroll(inSender, inEvent);
 		}
